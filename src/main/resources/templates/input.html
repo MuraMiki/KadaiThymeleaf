@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf課題</title>
+</head>
+<body>
+    <h1>Thymeleaf課題</h1>
+    <h2>入力画面</h2>
+
+    <p>値を入力してください。</p>
+
+<!--/* 入力フォーム  */-->
+    <form method="post" action="/output">
+        <input type="text" name="value">
+        <button type="submit">送信</button>
+    </form>
+
+    <!--/* パラメータ previous に値が設定されていたら「前回入力された値は「{previousの値}」でした。」と表示する。
+    ※{previousの値}の部分は、実際のpreviousの値を表示する */-->
+
+     <!--/* <p th:text="'入力された値は「' + ${val} + '」でした'"></p> */-->
+
+</body>
+</html>
+
+<!--/* Chapter4.3参照  */-->
