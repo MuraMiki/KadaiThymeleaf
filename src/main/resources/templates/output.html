@@ -3,15 +3,15 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Thymeleaf課題</title>
+    <title th:text="#{content.title}">Thymeleaf課題</title>
 </head>
 <body>
-    <h1>Thymeleaf課題</h1>
+    <h1 th:text="#{content.title}">Thymeleaf課題</h1>
     <h2 title th:text="#{content.output}">出力画面</h2>
 
      <p th:text="'入力された値は「' + ${value} + '」でした'"></p>
 
     <!-- 入力画面に戻るとき previous に値を渡す -->
-    <a th:href="@{/input(previous=${value})}">入力画面へ戻る</a>
+    <a th:href="@{/input(previous=${value})}" th:text="#{content.return}">入力画面へ戻る</a>
 </body>
 </html>
