@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <title>Thymeleaf課題</title>
 </head>
-<body>
-    <h1>Thymeleaf課題</h1>
-    <h2>入力画面</h2>
 
-    <p>値を入力してください。</p>
+<body>
+<!--/* Lesson15 chapter4.4 messages.properties  */-->
+    <h1 th:text="#{content.title}">Thymeleaf課題</h1>
+     <h2 th:text="#{content.subtitle}">入力画面</h2>
+
+     <p th:text="#{content.prompt}">値を入力してください。</p>
 
 <!--/* 入力フォーム  */-->
     <form method="post" action="/output">
@@ -18,6 +20,11 @@
 
     <!--/* パラメータ previous に値が設定されていたら「前回入力された値は「{previousの値}」でした。」と表示する。
     ※{previousの値}の部分は、実際のpreviousの値を表示する */-->
+    <div th:if="${previous != null}">
+        <p th:text="'前回入力された値は「' + ${previous} + '」でした。'">前回入力された値は〇〇でした。</p>
+    </div>
+
+
 
      <!--/* <p th:text="'入力された値は「' + ${val} + '」でした'"></p> */-->
 
