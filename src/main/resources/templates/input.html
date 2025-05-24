@@ -12,17 +12,18 @@
 
      <p th:text="#{content.prompt}">値を入力してください。</p>
 
+ <!--/* パラメータ previous に値が設定されていたら「前回入力された値は「{previousの値}」でした。」と表示する。
+    ※{previousの値}の部分は、実際のpreviousの値を表示する */-->
+    <div th:if="${previous != null}">
+        <p th:text="'前回入力された値は「' + ${previous} + '」でした。'">前回入力された値は〇〇でした。</p>
+    </div>
+
 <!--/* 入力フォーム  */-->
     <form method="post" action="/output">
         <input type="text" name="value">
         <button type="submit">送信</button>
     </form>
 
-    <!--/* パラメータ previous に値が設定されていたら「前回入力された値は「{previousの値}」でした。」と表示する。
-    ※{previousの値}の部分は、実際のpreviousの値を表示する */-->
-    <div th:if="${previous != null}">
-        <p th:text="'前回入力された値は「' + ${previous} + '」でした。'">前回入力された値は〇〇でした。</p>
-    </div>
 
 
 
